@@ -9,3 +9,19 @@ class App:
             self.clock = pg.time.Clock()
             #initialize OpenGL
             glClearColor(0.1,0.2,0.2,1)
+            self.mainLoop()
+
+        def mainLoop(self):
+            
+            running = True
+            while (running):
+                #check events
+                for event in pg.event.get():
+                    if (event.type == pg.quit):
+                        running = False
+                #refresh screen
+                glClear(GL_COLOR_BUFFER_BIT)
+                pg.display.flip()
+
+                #timing
+                self.clock.tick(60)
