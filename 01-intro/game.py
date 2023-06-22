@@ -25,3 +25,9 @@ class App:
 
                 #timing
                 self.clock.tick(60)
+            self.quit()
+
+        def quit(self):
+            pg.quit()
+    if __name__ == "__main__":
+        myApp = App()
